@@ -42,9 +42,11 @@ or
 ```
 
 # After open testrunner
-1. Click on specs
-2. Click specific spec file to test
+1. Select browser
+2. Click on specs
+3. Click specific spec file to test
 
+Optional >>>>>>
 # If using YARN package manager
 
 # To install yarn globally
