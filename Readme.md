@@ -1,10 +1,12 @@
-npm, yarn & Cypress Commands:
+npm, yarn & Cypress Commands FYI:
 
 # npm commands: https://nodejs.org/en/download/
+```
 1. node --version // should be > 8.0
 2. npm --version
 3. npm update
 4. npm install 
+```
 
 # project level commands from scratch
 ```
@@ -38,6 +40,10 @@ or
 3. $(npm bin)/cypress open // shorcut using npm bin
 
 ```
+
+# After open testrunner
+1. Click on specs
+2. Click specific spec file to test
 
 # If using YARN package manager
 
