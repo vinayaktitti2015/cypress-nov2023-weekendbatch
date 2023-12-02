@@ -1,0 +1,18 @@
+
+1. iframes
+using cypress-iframe plugin
+using custom command plugin
+
+2. Page load issues
+go to config file 
+define the pageloadtimeouts 
+
+3. Cross-origin issues
+use the cross-origin function
+
+cy.origin()
+
+4. Tabs workaround 
+remote the target-attr
+using the href attribute 
+

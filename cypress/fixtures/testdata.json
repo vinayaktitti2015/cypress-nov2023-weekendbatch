@@ -1,0 +1,11 @@
+{
+  "filePath": "cypress/fixtures/sample.pdf",
+  "name": "James Doe",
+  "email": "james@yahoo.com",
+  "website": "https://docs.cypress.io/api/commands/fixture#__docusaurus_skipToContent_fallback",
+  "exp": "10+",
+  "comments": "cypress tests",
+  "alertMessage": "Do you really fill rest of the form?",
+  "successMessage": "Message Sent (go back)",
+  "errorMessage": "Error"
+}

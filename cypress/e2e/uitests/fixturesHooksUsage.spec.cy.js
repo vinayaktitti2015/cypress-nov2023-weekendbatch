@@ -1,34 +1,38 @@
 /// <reference types="cypress" />
 
 describe("handling webui controls", () => {
-  beforeEach(() => {
+  beforeEach(function () {
     cy.visit("https://www.globalsqa.com/samplepagetest/");
+
+    cy.fixture("testdata.json").then((data) => {
+      this.data = data;
+    });
   });
 
-  it("should fill the form successfully", () => {
+  it("should fill the form successfully", function () {
     // upload files
-    cy.get('[name="file-553"]').selectFile("cypress/fixtures/sample.pdf");
+    cy.get('[name="file-553"]').selectFile(this.data.filePath);
 
     // input fields
     cy.get("#g2599-name")
       .clear()
-      .type("james doe")
-      .should("have.value", "james doe");
+      .type(this.data.name)
+      .should("have.value", this.data.name);
 
     cy.get("#g2599-email")
       .clear()
-      .type("james@gmail.com")
-      .should("have.value", "james@gmail.com");
+      .type(this.data.email)
+      .should("have.value", this.data.email);
 
     cy.get("#g2599-website")
       .clear()
-      .type("https://nodejs.org/en")
-      .should("have.value", "https://nodejs.org/en");
+      .type(this.data.website)
+      .should("have.value", this.data.website);
 
     // dropdowns
     cy.get("#g2599-experienceinyears")
-      .select("10+")
-      .should("have.value", "10+");
+      .select(this.data.exp)
+      .should("have.value", this.data.exp);
 
     // checkboxes
     cy.get("input[value='Automation Testing']")
@@ -45,7 +49,7 @@ describe("handling webui controls", () => {
       .then(() => {
         cy.on("window:alert", (window) => {
           // expect is from chai assertion library
-          expect(window).to.equal("Do you really fill rest of the form?");
+          expect(window).to.equal(this.data.alertMessage);
           cy.on("window:confirm", () => true);
           cy.on("window:confirm", () => true);
         });
@@ -57,10 +61,11 @@ describe("handling webui controls", () => {
     // click event
     cy.get("button[type='submit']").click();
 
+    // should assertion
     cy.wait(3000);
     cy.get("div[class='content_bgr'] h3:nth-child(1)").should(
       "have.text",
-      "Message Sent (go back)"
+      this.data.successMessage
     );
 
     // expect usecase
@@ -70,11 +75,11 @@ describe("handling webui controls", () => {
       expect(uppercase).to.include("MESSAGE SENT");
     });
 
-    // invoke usecase
+    // jquery invoke usecase
     cy.get("div[class='content_bgr'] h3:nth-child(1)")
       .invoke("text")
       .then((text) => {
-        expect(text).to.equal("Message Sent (go back)");
+        expect(text).to.equal(this.data.successMessage);
       });
   });
 });

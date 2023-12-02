@@ -23,3 +23,18 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+
+require("cypress-downloadfile/lib/downloadFileCommand");
+
+// cypress custom commands
+Cypress.Commands.add("switchToIframe", (iframe) => {
+  return cy
+    .get(iframe)
+    .its("0.contentDocument.body")
+    .should("be.visible")
+    .then(cy.wrap);
+});
+
+Cypress.Commands.add("parseXlsx", (url) => {
+  return cy.task("parseXlsx", { url: url });
+});
