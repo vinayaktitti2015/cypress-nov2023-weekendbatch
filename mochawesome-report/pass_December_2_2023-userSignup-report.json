@@ -1,0 +1,103 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2023-12-02T11:20:06.689Z",
+    "end": "2023-12-02T11:20:28.503Z",
+    "duration": 21814,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "bd124948-f748-4464-a045-e9fa7ca590eb",
+      "title": "",
+      "fullFile": "cypress/e2e/specs/userSignup.cy.js",
+      "file": "cypress/e2e/specs/userSignup.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "c2bdf057-2f3d-4456-9109-f47698c1870e",
+          "title": "user signup feature",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "test user register successfully",
+              "fullTitle": "user signup feature test user register successfully",
+              "timedOut": null,
+              "duration": 7520,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "commonpage.getRegisterLink().click();\nregisterPage.getGender().check();\nregisterPage.getFirstName().clear().type(data.firstName);\nregisterPage.getLastName().clear().type(data.lastName);\nregisterPage.getEmail().clear().type(email);\nregisterPage.getPassword().clear().type(password);\nregisterPage.getConfirmPassword().clear().type(password);\nregisterPage.getRegisterButton().click();\ncy.contains(data.message).should(\"be.visible\");",
+              "err": {},
+              "uuid": "a763615e-7ff2-4f15-941f-f90ce38e7415",
+              "parentUUID": "c2bdf057-2f3d-4456-9109-f47698c1870e",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "a763615e-7ff2-4f15-941f-f90ce38e7415"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 7520,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "[status]_[datetime]-[name]-report",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportFilename": "[status]_[datetime]-[name]-report",
+        "timestamp": "longDate"
+      },
+      "version": "6.2.0"
+    }
+  }
+}

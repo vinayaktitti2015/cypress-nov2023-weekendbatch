@@ -15,8 +15,13 @@
 
 // Import commands.js using ES2015 syntax:
 import "./commands";
-import 'cypress-iframe';
-require('cy-verify-downloads').addCustomCommand();
+import "./register";
+import "./login";
+import "./products";
+
+import "cypress-iframe";
+require("cy-verify-downloads").addCustomCommand();
+import 'cypress-mochawesome-reporter/register';
 
 // Alternatively you can use CommonJS syntax:
 // require('./commands')

@@ -1,5 +1,9 @@
 {
-  "name": "James Doe",
-  "email": "james@yahoo.com",
-  "phone": 91232323232
+  "firstName": "James",
+  "lastName": "Doe",
+  "email": "jamesdoe@yahoo.com",
+  "phone": 91232323232,
+  "company": "Google Inc.",
+  "password": "admin123",
+  "message": "Your registration completed"
 }
