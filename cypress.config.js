@@ -50,5 +50,6 @@ module.exports = defineConfig({
     defaultCommandTimeout: 5000,
     pageLoadTimeout: 120000,
     experimentalRunAllSpecs: true,
+    projectId: "khzuh9",
   },
 });
