@@ -24,6 +24,6 @@ describe("user signup feature", () => {
     registerPage.getPassword().clear().type(password);
     registerPage.getConfirmPassword().clear().type(password);
     registerPage.getRegisterButton().click();
-    cy.contains("Invalid message").should("be.visible");
+    cy.contains("Message Sent (go back)").should("be.visible");
   });
 });
